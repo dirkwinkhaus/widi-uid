@@ -1,0 +1,7 @@
+ARG_ENABLE('widiuid', 'widiuid support', 'no');
+
+if (PHP_WIDIUID != 'no') {
+	AC_DEFINE('HAVE_WIDIUID', 1, 'widiuid support enabled');
+
+	EXTENSION('widiuid', 'widiuid.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
